@@ -83,11 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (path.includes("index.html") || path === "/" || path === "/index.html") {
         typeWriter("typewriter-index", "Ever Wondered... What is art trying to say, and why now?");
-    } else if (path.includes("programs.html")) {
+    } else if (path.includes("programs")) {
         typeWriter("typewriter-programs", "Explore Programs That Bring Art to Life");
-    } else if (path.includes("news.html")) {
+    } else if (path.includes("news")) {
         typeWriter("typewriter-news", "Latest Highlights From The Frame Community");
-    } else if (path.includes("register.html")) {
+    } else if (path.includes("register")) {
         typeWriter("typewriter-register", "Ready to Join? Let’s Make Art Together");
     }
 });
