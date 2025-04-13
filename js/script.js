@@ -79,7 +79,7 @@ function typeWriter(elementId, text, speed = 50) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const path = window.location.pathname.toLowerCase(); // normalize to lowercase
+    const path = window.location.pathname.toLowerCase();
 
     if (path.includes("index.html") || path === "/" || path === "/index.html") {
         typeWriter("typewriter-index", "Ever Wondered... What is art trying to say, and why now?");
@@ -88,10 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (path.includes("news.html")) {
         typeWriter("typewriter-news", "Latest Highlights From The Frame Community");
     } else if (path.includes("register.html")) {
-        typeWriter("typewriter-register", "Ready to Join?... Let’s Grow Our Art Community Together");
+        typeWriter("typewriter-register", "Ready to Join? Let’s Make Art Together");
     }
 });
-
 
 
 // ========== BACK TO TOP BUTTON ==========
