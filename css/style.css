@@ -29,7 +29,6 @@ h1 {
 }
 
 h2 {
-    font-size: rrem;
     font-weight: 700;
     color: #661649;;
 }
@@ -995,11 +994,6 @@ and (max-width: 1023px) {
     line-height: 1;
     vertical-align: middle;
     display: inline-block;
-}
-
-#backToTop i {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 iframe {
