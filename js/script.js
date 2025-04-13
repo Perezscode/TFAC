@@ -108,6 +108,7 @@ backToTop.addEventListener("click", () => {
 // ========== QUOTE GENERATOR ENHANCED ==========
 const quoteText = document.getElementById("quote-text");
 const newQuoteBtn = document.getElementById("new-quote");
+
 const quotes = [
     "Art enables us to find ourselves and lose ourselves at the same time.",
     "Every artist was first an amateur.",
@@ -116,12 +117,14 @@ const quotes = [
     "Art speaks where words are unable to explain."
 ];
 
-newQuoteBtn.addEventListener("click", () => {
-    quoteText.classList.remove("fade");
-    void quoteText.offsetWidth; // restart animation
-    quoteText.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-    quoteText.classList.add("fade");
-});
+if (newQuoteBtn && quoteText) {
+    newQuoteBtn.addEventListener("click", () => {
+        quoteText.classList.remove("fade");
+        void quoteText.offsetWidth; // restart animation
+        quoteText.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteText.classList.add("fade");
+    });
+}
 
 // ========== Toast Notification on Page Load ==========
 
@@ -145,25 +148,27 @@ window.addEventListener("load", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".join-form");
-    const submitBtn = form.querySelector("button");
-    
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
 
-        const name = form.querySelector("#name").value.trim();
-        const email = form.querySelector("#email").value.trim();
-        const reason = form.querySelector("#reason").value.trim();
+    if (form) {
+        const submitBtn = form.querySelector("button");
 
-        if (!name || !email || !reason) {
-            showToast("Please fill out all required fields.");
-            return;
-        }
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        showToast("Thanks for joining! We'll be in touch. 🎨");
+            const name = form.querySelector("#name").value.trim();
+            const email = form.querySelector("#email").value.trim();
+            const reason = form.querySelector("#reason").value.trim();
 
-        // Optionally clear the form
-        form.reset();
-    });
+            if (!name || !email || !reason) {
+                showToast("Please fill out all required fields.");
+                return;
+            }
+
+            showToast("Thanks for joining! We'll be in touch. 🎨");
+
+            form.reset();
+        });
+    }
 });
 
 // ========== TOAST FEEDBACK FUNCTION ==========
