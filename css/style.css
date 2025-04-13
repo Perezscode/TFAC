@@ -22,9 +22,10 @@ html, body {
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    color: #661649;;
+    color: #2b2627;
     font-weight: 900;
     font-size: 3rem;
+    margin: 2rem;
 }
 
 h2 {

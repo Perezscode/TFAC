@@ -70,27 +70,28 @@ function typeWriter(elementId, text, speed = 50) {
     const element = document.getElementById(elementId);
     function typing() {
         if (i < text.length) {
-        element.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, speed);
-    }
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
     }
     if (element) typing();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const path = window.location.pathname;
+    const path = window.location.pathname.toLowerCase(); // normalize to lowercase
 
     if (path.includes("index.html") || path === "/" || path === "/index.html") {
         typeWriter("typewriter-index", "Ever Wondered... What is art trying to say, and why now?");
-    } else if (path.includes("Programs.html")) {
+    } else if (path.includes("programs.html")) {
         typeWriter("typewriter-programs", "Explore Programs That Bring Art to Life");
-    } else if (path.includes("News.html")) {
+    } else if (path.includes("news.html")) {
         typeWriter("typewriter-news", "Latest Highlights From The Frame Community");
-    } else if (path.includes("Register.html")) {
-        typeWriter("typewriter-register", "Ready to Join? Let’s Make Art Together");
+    } else if (path.includes("register.html")) {
+        typeWriter("typewriter-register", "Ready to Join?... Let’s Grow Our Art Community Together");
     }
 });
+
 
 
 // ========== BACK TO TOP BUTTON ==========
@@ -128,20 +129,26 @@ if (newQuoteBtn && quoteText) {
 
 // ========== Toast Notification on Page Load ==========
 
-window.addEventListener("load", () => {
-    const toast = document.createElement("div");
-    toast.className = "toast";
-    toast.textContent = "Welcome to The Frame Art Club!";
-    document.body.appendChild(toast);
+document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname.toLowerCase();
 
-    setTimeout(() => {
-        toast.classList.add("show");
-    }, 500);
+    if (path.includes("index.html") || path === "/" || path === "/index.html") {
+        window.addEventListener("load", () => {
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.textContent = "Welcome to The Frame Art Club!";
+            document.body.appendChild(toast);
 
-    setTimeout(() => {
-        toast.classList.remove("show");
-        setTimeout(() => document.body.removeChild(toast), 300);
-    }, 8000);
+            setTimeout(() => {
+                toast.classList.add("show");
+            }, 500);
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+                setTimeout(() => document.body.removeChild(toast), 300);
+            }, 6000);
+        });
+    }
 });
 
 // ========== FORM VALIDATION & SUBMIT FEEDBACK ==========
